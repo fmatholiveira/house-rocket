@@ -51,7 +51,7 @@ def overview_data(data):
 
     st.dataframe(data)
 
-    c1, c2 = st.beta.columns((1, 1))
+    c1, c2 = st.beta_columns((1, 1))
 
     # Average Metrics
     df1 = data[['id','zipcode']].groupby('zipcode').count().reset_index()
@@ -90,7 +90,7 @@ def overview_data(data):
 def portfolio_density(data, geofile):
     st.title('Region Overview')
 
-    c1, c2 = st.beta.columns((1, 1))
+    c1, c2 = st.beta_columns((1, 1))
     c1.header('Portfolio Density')
 
     df = data
@@ -228,7 +228,7 @@ def attributes_distribution(data):
                                     sorted(set(data['bathrooms'].unique())))
 
 
-    c1, c2 = st.beta.columns(2)
+    c1, c2 = st.beta_columns(2)
     # House per bedrooms
     c1.header('Houses per bedrooms')
     df = data[data['bedrooms'] < f_bedrooms]
@@ -249,7 +249,7 @@ def attributes_distribution(data):
     f_waterview = st.sidebar.checkbox('Only houses with Water View')
 
 
-    c1, c2 = st.beta.columns(2)
+    c1, c2 = st.beta_columns(2)
     # House per floors
     c1.header('Houses per floor')
     df = data[data['floors'] < f_floors]
