@@ -93,7 +93,7 @@ def portfolio_density(data, geofile):
     c1, c2 = st.beta_columns((1, 1))
     c1.header('Portfolio Density')
 
-    df = data
+    df = data.sample(50)
 
     # Base Map - Folium
     density_map = folium.Map(location = [data['lat'].mean(),
